@@ -1,0 +1,22 @@
+<form method="post">
+    <h1>Редактирование статьи</h1>
+
+    <input type="hidden" class="form-control" name="id" th:value="${post.id}">
+
+    <div class="form-group">
+        <label for="title">Название</label>
+        <input type="text" class="form-control" id="title" name="title" th:value="${post.title}">
+    </div>
+    <div class="form-group">
+        <label for="description">Описание</label>
+        <input type="text" class="form-control" id="description" name="description" th:value="${post.description}">
+    </div>
+    <div class="form-group">
+        <label for="text">Полный текст</label>
+        <textarea class="form-control" cols="30" rows="10" id="text" name="text" th:text="${post.text}"></textarea>
+    </div>
+
+    <a th:href="'/view/' + ${post.id}" class="btn btn-outline-secondary">Назад</a>
+    <button type="submit" class="btn btn-outline-success">Редактировать</button>
+
+</form>

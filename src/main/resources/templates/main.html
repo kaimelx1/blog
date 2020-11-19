@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="parts/head"></div>
+
+<body>
+
+<div th:replace="parts/nav"></div>
+
+<div class="container mt-5">
+
+    <div th:replace="'parts/' + ${content}"></div>
+
+</div>
+
+<div th:replace="parts/footer"></div>
+
+<div th:replace="parts/add-js"></div>
+
+</body>
+</html>

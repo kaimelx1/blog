@@ -1,0 +1,29 @@
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+
+            <div class="blog-post">
+                <h2 class="blog-post-title" th:text="${post.title}"></h2>
+                <p class="blog-post-meta" th:text="${#dates.format(post.date, 'dd.MM.yyyy')} + ' | Просмотры: ' + ${post.views}"></p>
+                <p th:text="${post.description}"></p>
+                <hr>
+                <p th:text="${post.text}"></p>
+
+            </div>
+
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-4 mb-3 bg-light rounded text-center">
+                <a class="btn btn-sm btn-outline-secondary d-block" href="/">Назад</a>
+                <a class="btn btn-sm btn-outline-secondary mt-1 d-block" th:href="'/edit/' + ${post.id}">Редактировать</a>
+
+                <form th:action="'/remove/' + ${post.id}" method="post">
+                    <button type="submit" class="btn btn-sm btn-outline-danger mt-1 d-block w-100" onclick="return confirm('Удалить?')">Удалить</button>
+                </form>
+            </div>
+        </aside>
+
+    </div>
+
+</main>
